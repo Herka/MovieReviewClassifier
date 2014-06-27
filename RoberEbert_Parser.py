@@ -20,14 +20,14 @@ def mainpage():
         webpage = urllib.urlopen(url).read()
         soup = BeautifulSoup(webpage)
     
-        #mydivs = soup.findAll("div", { "class" : "flyout movies reviews" }) 
+       
         mydivs = soup.findAll("figure", { "class" : "movie review" }) 
         
         
         print "Seite: ", seite
         seite += 1
         for text in mydivs:
-            #print text.get_text().encode('utf-8')
+            
             text = str(text)
             movieTitleComp = re.compile("<a href=\".*\">(.*)</a>")
             movieTitleFind = re.findall(movieTitleComp, text)
@@ -36,9 +36,7 @@ def mainpage():
             urlFind = re.findall(urlComp, text)
             
             
-            
-            #print movieTitleFind
-            #print urlFind
+
             
             newurl = "%s%s" %("http://www.rogerebert.com", urlFind[0])
             reviewParser(newurl, fileid)
