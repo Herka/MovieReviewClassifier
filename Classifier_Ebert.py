@@ -8,7 +8,7 @@ import pickle
 
 startTime = time.time()
 
-#ebertFolder = os.listdir("C:\Users\Janis\Dropbox\Programmieren\Projects\NLTK_Classifier\Ebert_Reviews")
+
 ebertFolder = os.listdir("Ebert_Reviews")
 
 ebertNegList = []
